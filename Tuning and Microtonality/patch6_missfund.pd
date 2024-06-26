@@ -1,0 +1,205 @@
+#N canvas 857 363 446 398 10;
+#N canvas 556 293 447 148 how_it_works 0;
+#X text 43 30 Leave the fundamental frquency's amplitude at zero and
+bang "shake it". A random set of amplitudes will be given for each
+harmonic. Guess and try to solfèje (sing) the fundamental frequency.
+Then bring the fundamental frequency fader up. Did you get it right?
+Keep changing the fundamental frequancy and keep guessing.;
+#X restore 268 190 pd how_it_works;
+#X text 44 326 www.nucleomusicanova.com | www.unespar.edu.br;
+#X text 44 310 patch by Felipe de Almeida Ribeiro;
+#X text 44 277 BiA – Acoustics Library;
+#N canvas 570 93 446 626 exercise 0;
+#X text 30 118 Now rebuild the patch as found in BiA.;
+#X text 28 161 =================== exercise ================;
+#X text 29 24 Note: please read the "How it works" section before proceeding:
+;
+#X text 30 59 In order to rebuild the patch \, use the blank space
+in this window and create: 3 number boxes and obejcts [div] \, [mod]
+and [mtof].;
+#X restore 268 214 pd exercise;
+#X obj 45 44 bng 15 250 50 0 empty empty shake_it 17 7 0 10 -262144
+-1 -1;
+#X msg 162 68 \; pd dsp \$1;
+#X obj 162 44 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X floatatom 45 214 5 0 0 1 fundamental_frequency - -, f 5;
+#N canvas 697 199 1164 761 missing_fundamental 0;
+#X obj 207 21 inlet;
+#X obj 633 521 outlet;
+#X obj 48 316 osc~;
+#X obj 49 277 * 5;
+#X floatatom 131 276 5 0 0 0 - - -, f 5;
+#X obj 131 255 / 100;
+#X obj 131 213 random 75;
+#X obj 48 374 *~ 0.33;
+#X obj 64 213 random 10;
+#X obj 64 233 + 3;
+#X floatatom 64 254 5 0 0 0 - - -, f 5;
+#X floatatom 49 152 5 0 0 0 - - -, f 5;
+#X floatatom 48 297 5 0 0 0 - - -, f 5;
+#X obj 48 345 *~;
+#X obj 64 190 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 131 233 + 15;
+#X obj 131 190 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X floatatom 207 116 5 0 0 1 fundamental_frequency - -, f 5;
+#X obj 208 42 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 207 91 + 40;
+#X obj 207 67 random 260;
+#X obj 206 316 osc~;
+#X obj 207 277 * 5;
+#X floatatom 289 276 5 0 0 0 - - -, f 5;
+#X obj 289 255 / 100;
+#X obj 289 213 random 75;
+#X obj 206 374 *~ 0.33;
+#X obj 222 213 random 10;
+#X obj 222 233 + 3;
+#X floatatom 222 254 5 0 0 0 - - -, f 5;
+#X floatatom 207 152 5 0 0 0 - - -, f 5;
+#X floatatom 206 297 5 0 0 0 - - -, f 5;
+#X obj 206 345 *~;
+#X obj 222 190 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 289 233 + 15;
+#X obj 289 190 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 356 316 osc~;
+#X obj 357 277 * 5;
+#X floatatom 439 276 5 0 0 0 - - -, f 5;
+#X obj 439 255 / 100;
+#X obj 439 213 random 75;
+#X obj 356 374 *~ 0.33;
+#X obj 372 213 random 10;
+#X obj 372 233 + 3;
+#X floatatom 372 254 5 0 0 0 - - -, f 5;
+#X floatatom 357 152 5 0 0 0 - - -, f 5;
+#X floatatom 356 297 5 0 0 0 - - -, f 5;
+#X obj 356 345 *~;
+#X obj 372 190 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 439 233 + 15;
+#X obj 439 190 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 588 527 osc~;
+#X floatatom 588 487 5 0 0 0 - - -, f 5;
+#X obj 499 20 inlet;
+#X obj 656 152 hsl 128 15 -100 100 0 0 empty empty empty -2 -8 0 10
+-262144 -1 -1 0 1;
+#X text 591 154 Harmonics;
+#X text 787 153 Fundamental;
+#X obj 474 686 dac~;
+#X obj 128 414 +~;
+#X obj 165 521 +~;
+#X floatatom 653 185 5 0 0 0 - - -, f 5;
+#X floatatom 702 267 5 0 0 0 - - -, f 5;
+#X obj 653 221 min 0;
+#X obj 702 221 max 0;
+#X obj 653 243 + 100;
+#X floatatom 653 266 5 0 0 0 - - -, f 5;
+#X msg 628 301 100 \$1;
+#X obj 627 343 -;
+#X floatatom 627 364 5 0 0 0 - - -, f 5;
+#X obj 702 287 / 100;
+#X floatatom 702 308 5 0 0 0 - - -, f 5;
+#X obj 628 400 / 100;
+#X floatatom 628 421 5 0 0 0 - - -, f 5;
+#X obj 588 571 *~;
+#X obj 362 573 *~;
+#X connect 0 0 18 0;
+#X connect 2 0 13 0;
+#X connect 3 0 12 0;
+#X connect 4 0 13 1;
+#X connect 5 0 4 0;
+#X connect 6 0 15 0;
+#X connect 7 0 58 0;
+#X connect 8 0 9 0;
+#X connect 9 0 10 0;
+#X connect 10 0 3 1;
+#X connect 11 0 3 0;
+#X connect 11 0 14 0;
+#X connect 11 0 16 0;
+#X connect 12 0 2 0;
+#X connect 13 0 7 0;
+#X connect 14 0 8 0;
+#X connect 15 0 5 0;
+#X connect 16 0 6 0;
+#X connect 17 0 11 0;
+#X connect 17 0 45 0;
+#X connect 17 0 30 0;
+#X connect 17 0 52 0;
+#X connect 18 0 20 0;
+#X connect 19 0 17 0;
+#X connect 20 0 19 0;
+#X connect 21 0 32 0;
+#X connect 22 0 31 0;
+#X connect 23 0 32 1;
+#X connect 24 0 23 0;
+#X connect 25 0 34 0;
+#X connect 26 0 58 1;
+#X connect 27 0 28 0;
+#X connect 28 0 29 0;
+#X connect 29 0 22 1;
+#X connect 30 0 22 0;
+#X connect 30 0 33 0;
+#X connect 30 0 35 0;
+#X connect 31 0 21 0;
+#X connect 32 0 26 0;
+#X connect 33 0 27 0;
+#X connect 34 0 24 0;
+#X connect 35 0 25 0;
+#X connect 36 0 47 0;
+#X connect 37 0 46 0;
+#X connect 38 0 47 1;
+#X connect 39 0 38 0;
+#X connect 40 0 49 0;
+#X connect 41 0 59 1;
+#X connect 42 0 43 0;
+#X connect 43 0 44 0;
+#X connect 44 0 37 1;
+#X connect 45 0 37 0;
+#X connect 45 0 48 0;
+#X connect 45 0 50 0;
+#X connect 46 0 36 0;
+#X connect 47 0 41 0;
+#X connect 48 0 42 0;
+#X connect 49 0 39 0;
+#X connect 50 0 40 0;
+#X connect 51 0 73 0;
+#X connect 52 0 51 0;
+#X connect 52 0 1 0;
+#X connect 53 0 54 0;
+#X connect 54 0 60 0;
+#X connect 58 0 59 0;
+#X connect 59 0 74 0;
+#X connect 60 0 62 0;
+#X connect 60 0 63 0;
+#X connect 61 0 69 0;
+#X connect 62 0 64 0;
+#X connect 63 0 61 0;
+#X connect 64 0 65 0;
+#X connect 65 0 66 0;
+#X connect 66 0 67 0;
+#X connect 67 0 68 0;
+#X connect 68 0 71 0;
+#X connect 69 0 70 0;
+#X connect 70 0 73 1;
+#X connect 71 0 72 0;
+#X connect 72 0 74 1;
+#X connect 73 0 57 0;
+#X connect 73 0 57 1;
+#X connect 74 0 57 0;
+#X connect 74 0 57 1;
+#X restore 45 185 pd missing_fundamental;
+#X text 73 137 Harmonics;
+#X text 269 136 Fundamental;
+#X obj 139 136 hsl 128 15 -100 100 0 0 empty empty empty -2 -8 0 10
+-262144 -1 -1 0 1;
+#X text 44 293 © 2018 Grupo de Pesquisa Núcleo Música Nova (CNPq/UNESPAR)
+;
+#X connect 5 0 9 0;
+#X connect 7 0 6 0;
+#X connect 9 0 8 0;
+#X connect 12 0 9 1;

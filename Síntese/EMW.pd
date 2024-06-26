@@ -1,0 +1,178 @@
+#N canvas 852 166 525 751 10;
+#X obj 69 279 cnv 15 147 141 empty empty VCF 20 12 0 10 -228856 -214290
+0;
+#X obj 221 279 cnv 15 221 141 empty empty VCF 20 12 0 10 -228856 -214290
+0;
+#X obj 221 425 cnv 15 222 222 empty empty EG 20 12 0 10 -228856 -214290
+0;
+#X obj 69 425 cnv 15 147 222 empty empty VCA 20 12 0 10 -228856 -214290
+0;
+#X obj 221 163 cnv 15 220 111 empty empty VCO 20 12 0 10 -228856 -214290
+0;
+#X obj 34 665 cnv 15 442 86 empty empty empty 20 12 0 14 -228856 -66577
+0;
+#X text 56 723 www.nucleomusicanova.com | www.unespar.edu.br;
+#X text 56 707 patch by Felipe de Almeida Ribeiro;
+#X text 56 673 BiA – Acoustics Library;
+#X text 55 690 © 2017 Grupo de Pesquisa Núcleo Música Nova (CNPq/UNESPAR)
+;
+#X obj 35 31 cnv 15 437 35 empty \$0-pddp.cnv.header Sintetizador\ Modular\ Analógico
+3 12 0 18 -214290 -1 0;
+#X obj 230 484 envgen 203 123 1 0  ;
+#X obj 81 462 *~;
+#X obj 230 620 line~;
+#X obj 81 492 dac~, f 5;
+#N canvas 877 299 447 148 funcionamento 0;
+#X text 45 56 Trata-se de um patch que recria os primeiros módulos
+descritos por Robert Moog \, em especial: VCO \, LFO \, VCF \, EG \,
+VCA.;
+#X restore 82 549 pd funcionamento;
+#N canvas 708 114 840 583 teoria 0;
+#X obj 25 169 cnv 15 161 28 empty empty empty 20 12 0 14 -228856 -66577
+0;
+#X text 24 264 (...) The first keyboard we built used an organ keyboard
+mechanism \, along with some circuitry that would open and close the
+voltage control amplifier every time you pressed a key \, which made
+an envelope on the sound.;
+#X text 27 208 (...) The envelope generator inside the keyboard opened
+up the voltage-controlled amplifier every time you pressed a key \,
+and that is how the sound was shaped.;
+#X text 22 515 Robert Moog in Ben Kettlewell "Electronic Music Pioneers"
+(ISBN 1-931140-17-0);
+#X text 22 60 These were modular components \, because each of the
+components did one thing \, and one thing only towards generating \,
+shaping \, or controlling sound. In order to make complete musical
+sound \; you had to mix several of the components together.;
+#X text 30 175 EG – Envelope Generator;
+#X obj 22 27 cnv 15 161 28 empty empty empty 20 12 0 14 -228856 -66577
+0;
+#X text 29 32 Sintetizador Modular;
+#X obj 428 27 cnv 15 227 30 empty empty empty 20 12 0 14 -228856 -66577
+0;
+#X text 433 32 VCO – Voltage-controlled oscillator;
+#X text 25 333 Vladimir Ussachevsky \, who in 1964 was the head of
+the Columbia–Princeton Electronic Music Center in New York City \,
+gave us an order. He wanted me to design and build an envelope generator
+that had four parts to the envelope \, the initial rise \, or attack
+\, the initial fall \, or decay \, a flat area called sustain \, and
+when you let go of the keyboard or trigger \, the fall back to silence
+\, which is called the release. This four part envelope \, attack \,
+decay \, sustain \, release \, is now well know to all electronic musicians
+who play synthesizers. It's called the ADSR envelope.;
+#X obj 434 165 cnv 15 203 28 empty empty empty 20 12 0 14 -228856 -66577
+0;
+#X text 440 171 VCF – Voltage-controlled filter;
+#X text 101 560 http://www.alternatemusicpress.com/features/moog.html
+;
+#X text 434 203 The last module I want to mention is the voltage controlled
+filter \, which was ordered by Gustav Ciamaga from the University of
+Toronto in 1965 This filter is a device that emphasizes or attenuates
+\, (cuts down) various parts of a musical sound \, ...what we call
+the overtones. In doing so it actually changes the tone color without
+changing the pitch or the loudness. The voltage controlled filter allowed
+the tone color changes in the sound to be affected rapidly \, and analog
+synthesizers are distinguished more for their control filter capabilities
+than any other single function.;
+#X obj 436 364 cnv 15 227 30 empty empty empty 20 12 0 14 -228856 -66577
+0;
+#X text 436 397 An amplifier simply makes a sound stronger or weaker.
+;
+#X text 427 61 An oscillator produces an electronic signal that repeats
+regularly between 20 and 20 \, 0 times a second \, which we hear as
+a pitched tone. (...) A voltage-controlled oscillator produces a pitched
+tone whose pitch can be changed rapidly by changing the voltage.;
+#X text 441 369 VCA – Voltage-controlled amplifier;
+#X restore 82 572 pd teoria;
+#X obj 235 245 osc~;
+#N canvas 1091 119 262 225 E.G. 0;
+#X msg 88 118 duration 500;
+#X msg 69 79 0 40 1 90 0.5 270 0.5 100 0;
+#X obj 70 196 outlet;
+#X obj 95 35 loadbang;
+#X obj 34 35 inlet;
+#X obj 34 63 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X connect 0 0 2 0;
+#X connect 1 0 2 0;
+#X connect 3 0 0 0;
+#X connect 3 0 1 0;
+#X connect 4 0 5 0;
+#X connect 5 0 1 0;
+#X connect 5 0 0 0;
+#X restore 289 459 pd E.G.;
+#X obj 230 450 bng 25 250 50 0 empty empty empty 17 7 0 10 -66577 -214290
+-1;
+#X obj 69 83 cnv 15 146 75 empty empty LFO 20 12 0 10 -228856 -214290
+0;
+#X obj 82 129 osc~;
+#X floatatom 149 108 5 0 0 2 amplitude - -, f 5;
+#X obj 235 193 *~;
+#X obj 235 221 +~;
+#X floatatom 275 193 5 0 0 1 Hz - -, f 5;
+#X floatatom 82 108 5 0 0 1 Hz - -, f 5;
+#X obj 289 439 bng 15 250 50 0 reset empty reset\ EG 17 7 0 10 -262144
+-1 -1;
+#X floatatom 298 358 5 0 200 1 ressonância - -, f 5;
+#X floatatom 266 339 7 0 0 1 freq_de_corte - -, f 7;
+#N canvas 1163 470 450 300 Moog_VCF 0;
+#X obj 95 20 inlet;
+#X obj 244 20 inlet;
+#X obj 104 157 bob~;
+#X obj 211 96 / 25;
+#X obj 118 96 pack 0 50;
+#X obj 118 121 line~;
+#X obj 211 127 line~;
+#X obj 82 275 outlet~;
+#X obj 24 100 inlet~;
+#X connect 0 0 4 0;
+#X connect 1 0 3 0;
+#X connect 2 0 7 0;
+#X connect 3 0 6 0;
+#X connect 4 0 5 0;
+#X connect 5 0 2 1;
+#X connect 6 0 2 2;
+#X connect 8 0 2 0;
+#X restore 235 382 pd Moog_VCF;
+#X obj 69 163 cnv 15 147 111 empty empty NOISE 20 12 0 10 -228856 -214290
+0;
+#X obj 81 188 noise~;
+#X obj 81 245 *~;
+#X obj 81 380 vcf~;
+#X obj 95 349 sig~;
+#X floatatom 95 328 5 0 0 2 freq_centro - -, f 5;
+#X floatatom 139 349 5 0 0 1 Q - -, f 5;
+#X obj 308 245 *~;
+#X obj 96 211 vradio 15 0 0 2 empty empty empty 0 -8 0 10 -262144 -1
+-1 0;
+#X text 115 210 off;
+#X text 115 225 on;
+#X obj 323 208 vradio 15 0 0 2 empty empty empty 0 -8 0 10 -262144
+-1 -1 1;
+#X text 342 207 off;
+#X text 342 222 on;
+#X connect 11 0 13 0;
+#X connect 12 0 14 1;
+#X connect 12 0 14 0;
+#X connect 13 0 12 1;
+#X connect 17 0 38 0;
+#X connect 18 0 11 0;
+#X connect 19 0 11 0;
+#X connect 21 0 23 0;
+#X connect 22 0 23 1;
+#X connect 23 0 24 0;
+#X connect 24 0 17 0;
+#X connect 25 0 24 1;
+#X connect 26 0 21 0;
+#X connect 27 0 18 0;
+#X connect 28 0 30 2;
+#X connect 29 0 30 1;
+#X connect 30 0 12 0;
+#X connect 32 0 33 0;
+#X connect 33 0 34 0;
+#X connect 34 0 12 0;
+#X connect 35 0 34 1;
+#X connect 36 0 35 0;
+#X connect 37 0 34 2;
+#X connect 38 0 30 0;
+#X connect 39 0 33 1;
+#X connect 42 0 38 1;

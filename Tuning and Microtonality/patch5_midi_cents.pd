@@ -1,0 +1,23 @@
+#N canvas 890 311 475 341 10;
+#X floatatom 111 58 5 0 0 1 midi_cents - -, f 5;
+#X floatatom 162 161 5 0 0 1 cents - -, f 5;
+#X obj 162 97 mod 100;
+#X obj 111 130 mtof;
+#X floatatom 111 161 6 0 0 0 frequency - -, f 6;
+#X obj 111 97 div 100;
+#N canvas 900 394 447 148 how_it_works 0;
+#X text 43 38 This patch works with the concept of MIDI cents \, i.e.
+6050 means a central C (60) with a quarter-tone higher. Once you type
+a MIDI cent note \, you get as a result its frequency and the linear
+correction in cents.;
+#X restore 263 160 pd how_it_works;
+#X text 63 272 www.nucleomusicanova.com | www.unespar.edu.br;
+#X text 63 239 © 2016 Grupo de Pesquisa Núcleo Música Nova (CNPq/UNESPAR)
+;
+#X text 63 256 patch by Felipe de Almeida Ribeiro;
+#X text 63 223 BiA – Acoustics Library;
+#X connect 0 0 2 0;
+#X connect 0 0 5 0;
+#X connect 2 0 1 0;
+#X connect 3 0 4 0;
+#X connect 5 0 3 0;

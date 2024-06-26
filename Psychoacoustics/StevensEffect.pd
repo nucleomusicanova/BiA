@@ -1,0 +1,104 @@
+#N canvas 566 127 424 555 10;
+#X obj 78 190 vradio 15 1 0 11 HARadio HARadioIn empty 0 -8 0 10 -262144
+-1 -1 0;
+#X text 110 234 1 kHz;
+#X text 103 187 150 Hz;
+#X text 103 202 300 Hz;
+#X text 103 218 500 Hz;
+#X text 98 249 1.5 kHz;
+#X text 110 264 2 kHz;
+#X text 110 279 3 kHz;
+#X text 110 294 4 kHz;
+#X text 110 309 5 kHz;
+#X text 110 324 8 kHz;
+#X text 105 339 12 kHz;
+#X obj 193 189 vsl 15 155 0 154 0 0 ESslidelevel empty empty 0 -9 0
+10 -262144 -1 -1 0 1;
+#X floatatom 183 359 5 0 0 0 - ESdb -, f 5;
+#X obj 258 251 outcontrol~;
+#X text 219 358 dB;
+#X text 147 15 Stevens Effect;
+#X text 18 38 Stevens Effect describes variations in perceived pitch
+as consequence of variations in intesity of a sinusoidal sound stimulus.
+;
+#X text 167 161 Intensity;
+#X text 75 161 Frequency;
+#N canvas 483 23 537 387 SE 0;
+#X obj 185 311 s HARadioFreq;
+#X obj 46 48 r HARadio;
+#X obj 342 48 loadbang;
+#N canvas 610 326 450 300 setup 0;
+#X obj 101 92 s HARadioIn;
+#X msg 101 66 0;
+#X obj 101 39 inlet;
+#X connect 1 0 0 0;
+#X connect 2 0 1 0;
+#X restore 342 78 pd setup;
+#X msg 46 294 150;
+#X msg 59 275 300;
+#X msg 73 256 500;
+#X msg 87 237 1000;
+#X msg 101 218 1500;
+#X msg 115 199 2000;
+#X msg 129 180 3000;
+#X msg 143 161 4000;
+#X msg 157 142 5000;
+#X msg 171 123 8000;
+#X msg 185 104 12000;
+#X obj 46 77 sel 0 1 2 3 4 5 6 7 8 9 10;
+#X obj 294 172 osc~;
+#X obj 294 143 r HARadioFreq;
+#X obj 387 143 r ESslidelevel;
+#X obj 387 171 / 154;
+#X obj 387 200 powtodb;
+#X obj 387 224 s ESdb;
+#X obj 294 283 throw~ L;
+#X obj 349 283 throw~ R;
+#X obj 309 221 line~;
+#X obj 309 200 pack 0 20;
+#X obj 294 248 *~;
+#X connect 1 0 15 0;
+#X connect 2 0 3 0;
+#X connect 4 0 0 0;
+#X connect 5 0 0 0;
+#X connect 6 0 0 0;
+#X connect 7 0 0 0;
+#X connect 8 0 0 0;
+#X connect 9 0 0 0;
+#X connect 10 0 0 0;
+#X connect 11 0 0 0;
+#X connect 12 0 0 0;
+#X connect 13 0 0 0;
+#X connect 14 0 0 0;
+#X connect 15 0 4 0;
+#X connect 15 1 5 0;
+#X connect 15 2 6 0;
+#X connect 15 3 7 0;
+#X connect 15 4 8 0;
+#X connect 15 5 9 0;
+#X connect 15 6 10 0;
+#X connect 15 7 11 0;
+#X connect 15 8 12 0;
+#X connect 15 9 13 0;
+#X connect 15 10 14 0;
+#X connect 16 0 26 0;
+#X connect 17 0 16 0;
+#X connect 18 0 19 0;
+#X connect 19 0 20 0;
+#X connect 19 0 25 0;
+#X connect 20 0 21 0;
+#X connect 24 0 26 1;
+#X connect 25 0 24 0;
+#X connect 26 0 23 0;
+#X connect 26 0 22 0;
+#X restore 275 218 pd SE;
+#X text 19 85 According to this principle \, low frequency sounds (below
+~2.5kHz) appear to decrease in frequency and high frequency sounds
+appear to increase in frequency \, both according to the increase of
+intensity for the sound stimulus.;
+#X text 35 498 www.nucleomusicanova.com | www.unespar.edu.br;
+#X text 35 419 BiA – Acoustics Library;
+#X text 35 482 patch by Clayton Rosa Mamedes;
+#X text 35 436 © 2016 Grupo de Pesquisa Núcleo Música Nova (CNPq/UNESPAR)
+Grupo de Pesquisa em Criação Musical \, Gesto e Processos de Interação
+Artística (UFPR);
