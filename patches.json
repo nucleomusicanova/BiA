@@ -1,0 +1,14 @@
+[
+    {
+        "title": "Frequency Interval Calculator",
+        "description": "Type two frequencies and instantly get the interval between them.",
+        "image": "Images/diamond.png",
+        "patch": "WebPatches/Cents/"
+    },
+    {
+        "title": "Oscilador Básico",
+        "description": "Patch simples para estudo de ondas básicas.",
+        "image": "Images/oscillator.png",
+        "patch": "WebPatches/Oscillator/"
+    }
+]

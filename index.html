@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+        <title>BiA Patch Library Web Page</title>
+        <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+        <link href="https://fonts.googleapis.com" rel="preconnect" />
+        <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&amp;display=swap"
+            rel="stylesheet"
+        />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+            rel="stylesheet"
+        />
+        <script>
+            tailwind.config = {
+                darkMode: "class",
+                theme: {
+                    extend: {
+                        colors: {
+                            primary: "#13a4ec",
+                            "background-light": "#f8fafc",
+                            "background-dark": "#101c22",
+                        },
+                        fontFamily: {
+                            display: ["Space Grotesk", "sans-serif"],
+                        },
+                        borderRadius: {
+                            DEFAULT: "0.25rem",
+                            lg: "0.5rem",
+                            xl: "0.75rem",
+                            full: "9999px",
+                        },
+                    },
+                },
+            };
+        </script>
+        <style>
+            .material-symbols-outlined {
+                font-variation-settings:
+                    "FILL" 0,
+                    "wght" 400,
+                    "GRAD" 0,
+                    "opsz" 24;
+            }
+        </style>
+    </head>
+    <body class="font-display bg-background-light text-slate-800">
+        <div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+            <div class="layout-container flex h-full grow flex-col">
+                <div class="px-4 sm:px-8 md:px-16 lg:px-24 xl:px-40 flex flex-1 justify-center py-5">
+                    <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
+                        <header
+                            class="flex items-center justify-between whitespace-nowrap border-b border-solid border-slate-200 px-4 sm:px-10 py-3"
+                        >
+                            <div class="flex items-center gap-4 text-slate-900">
+                                <div class="size-10">
+                                    <img
+                                        src="https://raw.githubusercontent.com/nucleomusicanova/nucleomusicanova.github.io/main/assets/images/icon_preto.png"
+                                        alt="icon"
+                                        class="w-full h-full object-contain"
+                                    />
+                                </div>
+                                <h2 class="text-slate-900 text-lg font-bold leading-tight tracking-[-0.015em]">
+                                    Núcleo Música Nova
+                                </h2>
+                            </div>
+                        </header>
+                        <main class="flex-1">
+                            <div class="flex flex-wrap justify-between gap-3 p-4">
+                                <div class="flex min-w-72 flex-col gap-3">
+                                    <p class="text-slate-900 text-4xl font-black leading-tight tracking-[-0.033em]">
+                                        Biblioteca de Patches BiA
+                                    </p>
+                                    <p class="text-slate-600 text-base font-normal leading-normal">
+                                        Uma coleção de patches de Pure Data para exploração sonora e visual. Navegue,
+                                        pesquise e abra os patches interativamente.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="px-4 py-3">
+                                <label class="flex flex-col min-w-40 h-12 w-full">
+                                    <div class="flex w-full flex-1 items-stretch rounded-lg h-full">
+                                        <div
+                                            class="text-slate-500 flex border border-solid border-slate-200 bg-white items-center justify-center pl-4 rounded-l-lg border-r-0"
+                                        >
+                                            <span class="material-symbols-outlined">search</span>
+                                        </div>
+                                        <input
+                                            class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-slate-900 focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-solid border-slate-200 bg-white h-full placeholder:text-slate-400 px-4 rounded-l-none border-l-0 pl-2 text-base font-normal leading-normal"
+                                            placeholder="Search by name or description..."
+                                            value=""
+                                        />
+                                    </div>
+                                </label>
+                            </div>
+                            <div
+                                id="patches-list"
+                                class="grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))] gap-6 p-4"
+                            >
+                                <div
+                                    class="flex flex-col gap-3 rounded-xl bg-white border border-slate-200 p-4 transition-all hover:shadow-lg hover:border-slate-300"
+                                >
+                                    <div
+                                        class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg"
+                                        data-alt="Abstract visual representation of a simple FM synthesizer"
+                                        style="
+                                            background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuA6MpDfvIEI8J_TBK5RofB7AwWsBweqTv1pnWe4dddBfIx_w3LNSKkauRG51V1yBfjvLwg6D2sFkJjgxe3n6HV0qnjIEc89RQPBH_OibqRhlIME7lLMDpqyfaFd-Ac2SFpm7CqDV3Pw17KIG_vHwGPjiCO6knJ4vAj0lJqX7UgJiyjF6K2T-sm1iI-y_HkfOtlrj7YZl-vFbWwFEceR-q0LYFZUgYrIvg4nKWXGHQ-m57kDD-tEV3JUb_K2BsjpyDpiCVTch4OU3b8J&quot;);
+                                        "
+                                    ></div>
+                                    <div>
+                                        <p class="text-slate-900 text-lg font-medium leading-normal">
+                                            Sintetizador FM Simples
+                                        </p>
+                                        <p class="text-slate-500 text-sm font-normal leading-normal mt-1">
+                                            Um sintetizador básico de 2 operadores para explorar a síntese FM.
+                                        </p>
+                                    </div>
+                                    <button
+                                        class="w-full mt-2 px-4 py-2 bg-primary text-white rounded-lg font-semibold hover:bg-primary/90 transition-colors"
+                                    >
+                                        Open Patch
+                                    </button>
+                                </div>
+                            </div>
+                        </main>
+                        <footer
+                            class="flex flex-col gap-6 px-5 py-10 text-center mt-10 border-t border-solid border-slate-200"
+                        >
+                            <div class="flex flex-wrap items-center justify-center gap-6"></div>
+                            <p class="text-slate-500 text-sm font-normal leading-normal">
+                                © 2025 BiA Patch Library. All rights reserved.
+                            </p>
+                        </footer>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            async function loadPatches() {
+                try {
+                    const response = await fetch("patches.json");
+                    if (!response.ok) throw new Error("Failed to load patches.json");
+
+                    const patches = await response.json();
+                    const container = document.getElementById("patches-list");
+
+                    container.innerHTML = ""; // Clear any placeholder
+
+                    patches.forEach((patch) => {
+                        const card = document.createElement("div");
+                        // added h-full so the card stretches and flex can push the button to the bottom
+                        card.className =
+                            "flex flex-col h-full rounded-xl bg-white border border-slate-200 p-4 transition-all hover:shadow-lg hover:border-slate-300";
+
+                        card.innerHTML = `
+                <div
+                    class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg"
+                    style="background-image: url('${patch.image}');"
+                ></div>
+
+                <div class="mt-3 flex-1 flex flex-col">
+                    <p class="text-slate-900 text-lg font-medium leading-normal">
+                        ${patch.title}
+                    </p>
+                    <p class="text-slate-500 text-sm font-normal leading-normal mt-1">
+                        ${patch.description}
+                    </p>
+                </div>
+
+                <button
+                    class="mt-4 mb-4 w-full px-4 py-2 bg-primary text-white rounded-lg font-semibold hover:bg-primary/90 transition-colors"
+                    onclick="openPatch('${patch.patch}')"
+                >
+                    Open Patch
+                </button>
+            `;
+                        container.appendChild(card);
+                    });
+                } catch (err) {
+                    console.error("Error loading patches:", err);
+                }
+            }
+
+            function openPatch(path) {
+                window.location.href = path; // redirect to patch folder
+            }
+
+            document.addEventListener("DOMContentLoaded", loadPatches);
+        </script>
+    </body>
+</html>
