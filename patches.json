@@ -6,6 +6,12 @@
         "patch": "WebPatches/Cents/"
     },
     {
+        "title": "Tonalidade Diamante - Harry Partch",
+        "description": "Ouça a Afinação Justa das Tonalidades Diamantes de Harry Partch.",
+        "image": "Images/partch.png",
+        "patch": "WebPatches/Diamond/"
+    },
+    {
         "title": "Oscilador Básico",
         "description": "Patch simples para estudo de ondas básicas.",
         "image": "Images/oscillator.png",
