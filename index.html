@@ -51,33 +51,32 @@
     <body class="font-display bg-background-light text-slate-800">
         <div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
             <div class="layout-container flex h-full grow flex-col">
-                <div class="px-4 sm:px-8 md:px-16 lg:px-24 xl:px-40 flex flex-1 justify-center py-5">
+                <div class="px-4 sm:px-8 md:px-16 lg:px-24 xl:px-40 flex flex-1 justify-center pt-2 pb-5">
                     <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
                         <header
-                            class="flex items-center justify-between whitespace-nowrap border-b border-solid border-slate-200 px-4 sm:px-10 py-3"
+                            class="w-full border-b border-slate-200 px-4 sm:px-10 pt-0 pb-6 flex flex-col items-center text-center"
                         >
-                            <div class="flex items-center gap-4 text-slate-900">
-                                <div class="size-10">
-                                    <img
-                                        src="https://raw.githubusercontent.com/nucleomusicanova/nucleomusicanova.github.io/main/assets/images/icon_preto.png"
-                                        alt="icon"
-                                        class="w-full h-full object-contain"
-                                    />
-                                </div>
-                                <h2 class="text-slate-900 text-lg font-bold leading-tight tracking-[-0.015em]">
-                                    Núcleo Música Nova
-                                </h2>
+                            <div class="size-16 mb-3 mt-0">
+                                <img
+                                    src="https://raw.githubusercontent.com/nucleomusicanova/nucleomusicanova.github.io/main/assets/images/icon_preto.png"
+                                    alt="icon"
+                                    class="w-full h-full object-contain"
+                                />
                             </div>
+
+                            <h1 class="text-slate-900 text-4xl font-bold tracking-[-0.015em]">
+                                Biblioteca para Acústica Musical
+                            </h1>
                         </header>
+
                         <main class="flex-1">
                             <div class="flex flex-wrap justify-between gap-3 p-4">
                                 <div class="flex min-w-72 flex-col gap-3">
-                                    <p class="text-slate-900 text-4xl font-black leading-tight tracking-[-0.033em]">
-                                        Biblioteca de Patches BiA
-                                    </p>
+                                    <p class="text-slate-900 text-4xl font-black leading-tight tracking-[-0.033em]"></p>
                                     <p class="text-slate-600 text-base font-normal leading-normal">
-                                        Uma coleção de patches de Pure Data para exploração sonora e visual. Navegue,
-                                        pesquise e abra os patches interativamente.
+                                        Uma coleção de patches de Pure Data para exploração sonora e visual de conceitos
+                                        de acústica a partir de perspectivas musicais. Navegue, pesquise, ouça, os
+                                        patches interativamente.
                                     </p>
                                 </div>
                             </div>
@@ -100,32 +99,7 @@
                             <div
                                 id="patches-list"
                                 class="grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))] gap-6 p-4"
-                            >
-                                <div
-                                    class="flex flex-col gap-3 rounded-xl bg-white border border-slate-200 p-4 transition-all hover:shadow-lg hover:border-slate-300"
-                                >
-                                    <div
-                                        class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg"
-                                        data-alt="Abstract visual representation of a simple FM synthesizer"
-                                        style="
-                                            background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuA6MpDfvIEI8J_TBK5RofB7AwWsBweqTv1pnWe4dddBfIx_w3LNSKkauRG51V1yBfjvLwg6D2sFkJjgxe3n6HV0qnjIEc89RQPBH_OibqRhlIME7lLMDpqyfaFd-Ac2SFpm7CqDV3Pw17KIG_vHwGPjiCO6knJ4vAj0lJqX7UgJiyjF6K2T-sm1iI-y_HkfOtlrj7YZl-vFbWwFEceR-q0LYFZUgYrIvg4nKWXGHQ-m57kDD-tEV3JUb_K2BsjpyDpiCVTch4OU3b8J&quot;);
-                                        "
-                                    ></div>
-                                    <div>
-                                        <p class="text-slate-900 text-lg font-medium leading-normal">
-                                            Sintetizador FM Simples
-                                        </p>
-                                        <p class="text-slate-500 text-sm font-normal leading-normal mt-1">
-                                            Um sintetizador básico de 2 operadores para explorar a síntese FM.
-                                        </p>
-                                    </div>
-                                    <button
-                                        class="w-full mt-2 px-4 py-2 bg-primary text-white rounded-lg font-semibold hover:bg-primary/90 transition-colors"
-                                    >
-                                        Open Patch
-                                    </button>
-                                </div>
-                            </div>
+                            ></div>
                         </main>
                         <footer
                             class="flex flex-col gap-6 px-5 py-10 text-center mt-10 border-t border-solid border-slate-200"
@@ -186,7 +160,7 @@
             }
 
             function openPatch(path) {
-                window.location.href = path; // redirect to patch folder
+                window.open(path, "_blank");
             }
 
             document.addEventListener("DOMContentLoaded", loadPatches);

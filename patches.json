@@ -1,9 +1,9 @@
 [
     {
-        "title": "Frequency Interval Calculator",
-        "description": "Type two frequencies and instantly get the interval between them.",
-        "image": "Images/diamond.png",
-        "patch": "WebPatches/Cents/"
+        "title": "Cents Analysis",
+        "description": "Listening the Cents diference between temperaments",
+        "image": "Images/cents-analysis.png",
+        "patch": "WebPatches/Cents-Analysis/"
     },
     {
         "title": "Tonalidade Diamante - Harry Partch",
