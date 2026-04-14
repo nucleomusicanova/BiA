@@ -1,10 +1,6 @@
-#N canvas 857 363 446 398 10;
+#N canvas 0 0 925 1132 10;
 #N canvas 556 293 447 148 how_it_works 0;
-#X text 43 30 Leave the fundamental frquency's amplitude at zero and
-bang "shake it". A random set of amplitudes will be given for each
-harmonic. Guess and try to solfèje (sing) the fundamental frequency.
-Then bring the fundamental frequency fader up. Did you get it right?
-Keep changing the fundamental frequancy and keep guessing.;
+#X text 43 30 Leave the fundamental frquency's amplitude at zero and bang "shake it". A random set of amplitudes will be given for each harmonic. Guess and try to solfèje (sing) the fundamental frequency. Then bring the fundamental frequency fader up. Did you get it right? Keep changing the fundamental frequancy and keep guessing.;
 #X restore 268 190 pd how_it_works;
 #X text 44 326 www.nucleomusicanova.com | www.unespar.edu.br;
 #X text 44 310 patch by Felipe de Almeida Ribeiro;
@@ -12,100 +8,87 @@ Keep changing the fundamental frequancy and keep guessing.;
 #N canvas 570 93 446 626 exercise 0;
 #X text 30 118 Now rebuild the patch as found in BiA.;
 #X text 28 161 =================== exercise ================;
-#X text 29 24 Note: please read the "How it works" section before proceeding:
-;
-#X text 30 59 In order to rebuild the patch \, use the blank space
-in this window and create: 3 number boxes and obejcts [div] \, [mod]
-and [mtof].;
+#X text 29 24 Note: please read the "How it works" section before proceeding:;
+#X text 30 59 In order to rebuild the patch \, use the blank space in this window and create: 3 number boxes and obejcts [div] \, [mod] and [mtof].;
 #X restore 268 214 pd exercise;
-#X obj 45 44 bng 15 250 50 0 empty empty shake_it 17 7 0 10 -262144
--1 -1;
+#X obj 45 44 bng 15 250 50 0 empty empty shake_it 17 7 0 10 #fcfcfc #000000 #000000;
 #X msg 162 68 \; pd dsp \$1;
-#X obj 162 44 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
-1;
-#X floatatom 45 214 5 0 0 1 fundamental_frequency - -, f 5;
+#X obj 162 44 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000 0 1;
+#X floatatom 45 214 5 0 0 1 fundamental_frequency - - 0;
 #N canvas 697 199 1164 761 missing_fundamental 0;
 #X obj 207 21 inlet;
 #X obj 633 521 outlet;
 #X obj 48 316 osc~;
 #X obj 49 277 * 5;
-#X floatatom 131 276 5 0 0 0 - - -, f 5;
+#X floatatom 131 276 5 0 0 0 - - - 0;
 #X obj 131 255 / 100;
 #X obj 131 213 random 75;
 #X obj 48 374 *~ 0.33;
 #X obj 64 213 random 10;
 #X obj 64 233 + 3;
-#X floatatom 64 254 5 0 0 0 - - -, f 5;
-#X floatatom 49 152 5 0 0 0 - - -, f 5;
-#X floatatom 48 297 5 0 0 0 - - -, f 5;
+#X floatatom 64 254 5 0 0 0 - - - 0;
+#X floatatom 49 152 5 0 0 0 - - - 0;
+#X floatatom 48 297 5 0 0 0 - - - 0;
 #X obj 48 345 *~;
-#X obj 64 190 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
--1;
+#X obj 64 190 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000;
 #X obj 131 233 + 15;
-#X obj 131 190 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
-#X floatatom 207 116 5 0 0 1 fundamental_frequency - -, f 5;
-#X obj 208 42 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
--1;
+#X obj 131 190 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000;
+#X floatatom 207 116 5 0 0 1 fundamental_frequency - - 0;
+#X obj 208 42 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000;
 #X obj 207 91 + 40;
 #X obj 207 67 random 260;
 #X obj 206 316 osc~;
 #X obj 207 277 * 5;
-#X floatatom 289 276 5 0 0 0 - - -, f 5;
+#X floatatom 289 276 5 0 0 0 - - - 0;
 #X obj 289 255 / 100;
 #X obj 289 213 random 75;
 #X obj 206 374 *~ 0.33;
 #X obj 222 213 random 10;
 #X obj 222 233 + 3;
-#X floatatom 222 254 5 0 0 0 - - -, f 5;
-#X floatatom 207 152 5 0 0 0 - - -, f 5;
-#X floatatom 206 297 5 0 0 0 - - -, f 5;
+#X floatatom 222 254 5 0 0 0 - - - 0;
+#X floatatom 207 152 5 0 0 0 - - - 0;
+#X floatatom 206 297 5 0 0 0 - - - 0;
 #X obj 206 345 *~;
-#X obj 222 190 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
+#X obj 222 190 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000;
 #X obj 289 233 + 15;
-#X obj 289 190 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
+#X obj 289 190 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000;
 #X obj 356 316 osc~;
 #X obj 357 277 * 5;
-#X floatatom 439 276 5 0 0 0 - - -, f 5;
+#X floatatom 439 276 5 0 0 0 - - - 0;
 #X obj 439 255 / 100;
 #X obj 439 213 random 75;
 #X obj 356 374 *~ 0.33;
 #X obj 372 213 random 10;
 #X obj 372 233 + 3;
-#X floatatom 372 254 5 0 0 0 - - -, f 5;
-#X floatatom 357 152 5 0 0 0 - - -, f 5;
-#X floatatom 356 297 5 0 0 0 - - -, f 5;
+#X floatatom 372 254 5 0 0 0 - - - 0;
+#X floatatom 357 152 5 0 0 0 - - - 0;
+#X floatatom 356 297 5 0 0 0 - - - 0;
 #X obj 356 345 *~;
-#X obj 372 190 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
+#X obj 372 190 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000;
 #X obj 439 233 + 15;
-#X obj 439 190 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
+#X obj 439 190 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000;
 #X obj 588 527 osc~;
-#X floatatom 588 487 5 0 0 0 - - -, f 5;
+#X floatatom 588 487 5 0 0 0 - - - 0;
 #X obj 499 20 inlet;
-#X obj 656 152 hsl 128 15 -100 100 0 0 empty empty empty -2 -8 0 10
--262144 -1 -1 0 1;
+#X obj 656 152 hsl 128 15 -100 100 0 0 empty empty empty -2 -8 0 10 #fcfcfc #000000 #000000 0 1;
 #X text 591 154 Harmonics;
 #X text 787 153 Fundamental;
 #X obj 474 686 dac~;
 #X obj 128 414 +~;
 #X obj 165 521 +~;
-#X floatatom 653 185 5 0 0 0 - - -, f 5;
-#X floatatom 702 267 5 0 0 0 - - -, f 5;
+#X floatatom 653 185 5 0 0 0 - - - 0;
+#X floatatom 702 267 5 0 0 0 - - - 0;
 #X obj 653 221 min 0;
 #X obj 702 221 max 0;
 #X obj 653 243 + 100;
-#X floatatom 653 266 5 0 0 0 - - -, f 5;
+#X floatatom 653 266 5 0 0 0 - - - 0;
 #X msg 628 301 100 \$1;
 #X obj 627 343 -;
-#X floatatom 627 364 5 0 0 0 - - -, f 5;
+#X floatatom 627 364 5 0 0 0 - - - 0;
 #X obj 702 287 / 100;
-#X floatatom 702 308 5 0 0 0 - - -, f 5;
+#X floatatom 702 308 5 0 0 0 - - - 0;
 #X obj 628 400 / 100;
-#X floatatom 628 421 5 0 0 0 - - -, f 5;
+#X floatatom 628 421 5 0 0 0 - - - 0;
 #X obj 588 571 *~;
 #X obj 362 573 *~;
 #X connect 0 0 18 0;
@@ -195,10 +178,8 @@ and [mtof].;
 #X restore 45 185 pd missing_fundamental;
 #X text 73 137 Harmonics;
 #X text 269 136 Fundamental;
-#X obj 139 136 hsl 128 15 -100 100 0 0 empty empty empty -2 -8 0 10
--262144 -1 -1 0 1;
-#X text 44 293 © 2018 Grupo de Pesquisa Núcleo Música Nova (CNPq/UNESPAR)
-;
+#X obj 139 136 hsl 128 15 -100 100 0 0 empty empty empty -2 -8 0 10 #fcfcfc #000000 #000000 0 1;
+#X text 44 293 © 2026 Grupo de Pesquisa Núcleo Música Nova (CNPq/UNESPAR);
 #X connect 5 0 9 0;
 #X connect 7 0 6 0;
 #X connect 9 0 8 0;
